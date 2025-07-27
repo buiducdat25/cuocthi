@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ứng dụng Web: Cuộc thi Sáng tạo Tô Hiệu</title>
+    <title>Cuộc thi Sáng tạo: Thanh niên Tô Hiệu Tự hào Việt Nam</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,7 +15,7 @@
             background-color: #f0f4f8;
         }
         .text-shadow {
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
         .card {
             background-color: white;
@@ -52,26 +52,13 @@
         }
         .tab-content { display: none; }
         .tab-content.active { display: block; }
-        .loader {
-            border: 4px solid #f3f3f3;
-            border-top: 4px solid #0079FF;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            animation: spin 1s linear infinite;
-            margin: 20px auto;
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
         .modal-overlay {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0,0,0,0.5);
+            background: rgba(0,0,0,0.6);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -112,7 +99,6 @@
                     <a href="#" class="nav-link" data-page="rules">📜 Thể lệ</a>
                     <a href="#" class="nav-link" data-page="prizes">🏆 Giải thưởng</a>
                     <a href="#" class="nav-link" data-page="submit">🚀 Nộp bài</a>
-                    <a href="#" class="nav-link" data-page="ai-assistant">✨ Trợ lý AI</a>
                 </div>
                 <div class="md:hidden">
                     <select id="mobile-nav" class="bg-[#0079FF] border-none rounded-md p-2">
@@ -120,7 +106,6 @@
                         <option value="rules">Thể lệ</option>
                         <option value="prizes">Giải thưởng</option>
                         <option value="submit">Nộp bài</option>
-                        <option value="ai-assistant">Trợ lý AI</option>
                     </select>
                 </div>
             </div>
@@ -128,9 +113,8 @@
     </header>
 
     <main class="container mx-auto p-4 md:p-8">
-        <!-- Trang chủ -->
         <div id="page-home" class="page-content active">
-            <div class="text-center bg-cover bg-center rounded-xl p-8 md:p-16" style="background-image: linear-gradient(rgba(0, 74, 173, 0.8), rgba(0, 74, 173, 0.8)), url('https://placehold.co/1200x400/004AAD/FFF?text=T%E1%BB%B1+h%C3%A0o+Vi%E1%BB%87t+Nam');">
+            <div class="text-center bg-cover bg-center rounded-xl p-8 md:p-16" style="background-image: linear-gradient(rgba(0, 74, 173, 0.8), rgba(0, 74, 173, 0.8)), url('https://images.unsplash.com/photo-1528127269322-539801943592?q=80&w=1200&auto=format&fit=crop');">
                 <h1 class="text-4xl md:text-6xl font-black text-white uppercase text-shadow">Thanh niên Tô Hiệu</h1>
                 <h2 class="text-2xl md:text-4xl font-bold text-[#FFC100] mt-2 text-shadow">Tự hào Việt Nam - Sáng tạo vì Tổ quốc</h2>
                 <p class="text-white mt-4 max-w-2xl mx-auto">Sân chơi sáng tạo nhân dịp kỷ niệm 80 năm Cách mạng Tháng Tám và Quốc khánh 2/9.</p>
@@ -158,7 +142,6 @@
             </div>
         </div>
 
-        <!-- Thể lệ -->
         <div id="page-rules" class="page-content">
             <div class="card mb-8">
                 <h3 class="text-2xl font-bold text-center text-[#004AAD] mb-4">Đối tượng tham gia</h3>
@@ -217,7 +200,6 @@
             </div>
         </div>
 
-        <!-- Giải thưởng -->
         <div id="page-prizes" class="page-content">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <div class="card">
@@ -240,7 +222,6 @@
             </div>
         </div>
 
-        <!-- Nộp bài -->
         <div id="page-submit" class="page-content">
             <div class="card">
                 <h3 class="text-3xl font-bold text-center text-[#004AAD] mb-6">Biểu mẫu nộp bài dự thi</h3>
@@ -273,8 +254,8 @@
                     </div>
                     <div>
                         <label for="work-file" class="font-semibold">Tệp tác phẩm (Ảnh/Video):</label>
-                        <input type="file" id="work-file" class="w-full mt-1 text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
-                        <p class="text-xs text-gray-500 mt-1">Lưu ý: Tệp sẽ không được tải lên trực tiếp. Bạn cần tự đính kèm tệp này vào email sẽ được mở ra ở bước tiếp theo.</p>
+                        <input type="file" id="work-file" class="w-full mt-1 text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100" required>
+                        <p class="text-xs text-gray-500 mt-1">Lưu ý: Bạn sẽ cần tự đính kèm tệp này vào email ở bước tiếp theo.</p>
                     </div>
                     <div class="text-center pt-4">
                         <button type="submit" class="bg-[#004AAD] text-white font-bold py-3 px-8 rounded-lg hover:bg-[#003B8A] transition">Tạo Email Nộp bài</button>
@@ -283,37 +264,15 @@
             </div>
         </div>
 
-        <!-- Trợ lý AI -->
-        <div id="page-ai-assistant" class="page-content">
-             <div class="card bg-gradient-to-r from-blue-50 to-indigo-50">
-                <h3 class="text-2xl font-bold text-center text-[#004AAD] mb-2">✨ Cần Cảm Hứng? Trợ Lý Sáng Tạo AI Giúp Bạn!</h3>
-                <p class="text-center text-gray-600 mb-6">Bí ý tưởng? Hãy chọn hạng mục và để AI gợi ý cho bạn những concept độc đáo!</p>
-                <div class="max-w-xl mx-auto">
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <select id="idea-category" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0079FF] focus:border-transparent">
-                            <option value="poster">Cho hạng mục Poster/Infographic</option>
-                            <option value="video">Cho hạng mục Video/Hình ảnh</option>
-                            <option value="writing">Cho hạng mục Bài viết & "Check-in"</option>
-                        </select>
-                        <button id="get-idea-btn" class="w-full sm:w-auto bg-[#004AAD] text-white font-bold py-3 px-6 rounded-lg hover:bg-[#003B8A] transition whitespace-nowrap">Gợi Ý Cho Tôi!</button>
-                    </div>
-                    <div id="idea-loader" class="hidden mt-4">
-                        <div class="loader"></div>
-                        <p class="text-center text-gray-500">AI đang tư duy, vui lòng chờ trong giây lát...</p>
-                    </div>
-                    <div id="idea-result" class="mt-6 p-4 bg-white rounded-lg border border-gray-200"></div>
-                </div>
-            </div>
-        </div>
     </main>
 
     <div id="submission-modal" class="modal-overlay">
         <div class="modal-content">
-            <h3 class="text-2xl font-bold text-green-600 mb-4">Sắp hoàn tất!</h3>
-            <p class="mb-4">Trình gửi email của bạn sẽ được mở ra với nội dung đã soạn sẵn. Vui lòng thực hiện 2 bước cuối cùng:</p>
-            <ol class="text-left list-decimal list-inside space-y-2 mb-6">
-                <li><strong>Đính kèm tệp</strong> tác phẩm của bạn vào email.</li>
-                <li>Nhấn nút <strong>"Gửi"</strong> (Send).</li>
+            <h3 class="text-2xl font-bold text-green-600 mb-4">Sắp hoàn tất! Vui lòng đọc kỹ!</h3>
+            <p class="mb-4">Trình duyệt sẽ mở ứng dụng email của bạn với nội dung đã soạn sẵn. Vui lòng thực hiện 2 bước cuối cùng:</p>
+            <ol class="text-left list-decimal list-inside space-y-3 mb-6 bg-gray-50 p-4 rounded-lg">
+                <li class="font-semibold"><strong>Bước 1: ĐÍNH KÈM TỆP.</strong> Trong cửa sổ email vừa mở, hãy tìm và nhấn nút đính kèm (thường có biểu tượng kẹp ghim 📎) và chọn tệp dự thi của bạn.</li>
+                <li class="font-semibold"><strong>Bước 2: NHẤN GỬI.</strong> Kiểm tra lại các thông tin và nhấn nút "Gửi" (Send).</li>
             </ol>
             <button id="close-modal-btn" class="bg-gray-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-gray-700 transition">Tôi đã hiểu</button>
         </div>
@@ -367,12 +326,12 @@
                     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
                     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-                    document.getElementById('days').innerText = String(days).padStart(2, '0');
-                    document.getElementById('hours').innerText = String(hours).padStart(2, '0');
-                    document.getElementById('minutes').innerText = String(minutes).padStart(2, '0');
-                    document.getElementById('seconds').innerText = String(seconds).padStart(2, '0');
-
-                    if (distance < 0) {
+                    if (distance > 0) {
+                        document.getElementById('days').innerText = String(days).padStart(2, '0');
+                        document.getElementById('hours').innerText = String(hours).padStart(2, '0');
+                        document.getElementById('minutes').innerText = String(minutes).padStart(2, '0');
+                        document.getElementById('seconds').innerText = String(seconds).padStart(2, '0');
+                    } else {
                         clearInterval(interval);
                         countdownElement.innerHTML = "<h4 class='text-2xl text-red-500 font-bold'>Đã hết hạn nộp bài!</h4>";
                     }
@@ -388,9 +347,7 @@
                     tabs.forEach(t => t.classList.remove('active'));
                     tab.classList.add('active');
                     tabContents.forEach(content => {
-                        if(content.parentElement.contains(tab)) {
-                            content.classList.toggle('active', content.id === target);
-                        }
+                         content.classList.toggle('active', content.id === target);
                     });
                 });
             });
@@ -475,71 +432,7 @@ Xin chân thành cảm ơn.
                     }
                 });
             }
-
-
-            // Gemini API Feature
-            const getIdeaBtn = document.getElementById('get-idea-btn');
-            const ideaCategorySelect = document.getElementById('idea-category');
-            const ideaLoader = document.getElementById('idea-loader');
-            const ideaResultDiv = document.getElementById('idea-result');
-
-            if(getIdeaBtn) {
-                getIdeaBtn.addEventListener('click', async () => {
-                    ideaLoader.style.display = 'block';
-                    ideaResultDiv.innerHTML = '';
-                    getIdeaBtn.disabled = true;
-
-                    const category = ideaCategorySelect.value;
-                    let prompt = '';
-                    const basePrompt = `As an expert in Vietnamese history and creative marketing, generate 3 distinct and creative ideas for a youth competition entry. The competition theme is "Thanh niên Tô Hiệu tự hào Việt Nam - Sáng tạo vì Tổ quốc" (Tô Hiệu Youth Proud of Vietnam - Creative for the Fatherland), celebrating the 80th anniversary of the August Revolution and National Day. The target audience is young people in Sơn La, Vietnam. The ideas should be modern, inspiring, and connect with local pride. Please provide the response in Vietnamese, formatted with markdown (using ### for titles and * for list items).`;
-
-                    switch(category) {
-                        case 'poster':
-                            prompt = `${basePrompt} The entry format is a Poster/Infographic. Focus on strong visual concepts, impactful slogans (under 14 words), and data visualization if applicable.`;
-                            break;
-                        case 'video':
-                            prompt = `${basePrompt} The entry format is a short Video (under 3 minutes). Focus on compelling storytelling, modern editing styles, and emotional connection. Suggest a simple plot or visual sequence for each idea.`;
-                            break;
-                        case 'writing':
-                            prompt = `${basePrompt} The entry format is a "Historical Check-in" article (500-1000 words) accompanied by a photo at a historical site in Sơn La (like Sơn La Prison). Focus on unique angles, personal reflections, and connecting the past with the present youth's role.`;
-                            break;
-                    }
-
-                    try {
-                        let chatHistory = [{ role: "user", parts: [{ text: prompt }] }];
-                        const payload = { contents: chatHistory };
-                        const apiKey = ""; 
-                        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
-                        
-                        const response = await fetch(apiUrl, {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify(payload)
-                        });
-
-                        if (!response.ok) throw new Error(`API Error: ${response.statusText}`);
-
-                        const result = await response.json();
-                        
-                        if (result.candidates && result.candidates[0]?.content?.parts[0]) {
-                            let text = result.candidates[0].content.parts[0].text;
-                            text = text.replace(/### (.*)/g, '<h4 class="text-lg font-bold mt-4 mb-2 text-[#004AAD]">$1</h4>');
-                            text = text.replace(/\* (.*)/g, '<p class="pl-4">- $1</p>');
-                            ideaResultDiv.innerHTML = text;
-                        } else {
-                            ideaResultDiv.innerHTML = '<p class="text-red-500">Không thể tạo ý tưởng vào lúc này. Vui lòng thử lại sau.</p>';
-                        }
-
-                    } catch (error) {
-                        console.error("Error fetching Gemini API:", error);
-                        ideaResultDiv.innerHTML = '<p class="text-red-500">Đã có lỗi xảy ra. Vui lòng kiểm tra kết nối mạng và thử lại.</p>';
-                    } finally {
-                        ideaLoader.style.display = 'none';
-                        getIdeaBtn.disabled = false;
-                    }
-                });
-            }
         });
     </script>
 </body>
-</ht
+</html>
